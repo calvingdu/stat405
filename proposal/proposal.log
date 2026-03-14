@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.20)  13 MAR 2026 18:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.20)  13 MAR 2026 19:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -376,45 +376,49 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 110.
+Underfull \hbox (badness 10000) in paragraph at lines 105--106
 
-Overfull \hbox (0.57442pt too wide) in paragraph at lines 115--117
+ []
+
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 112.
+
+Overfull \hbox (0.57442pt too wide) in paragraph at lines 117--119
 \OT1/cmr/m/n/10.95 Both the se-ries are down-loaded as plain CSV files di-rectly from FRED ([][]$\OT1/cmtt/m/n/10.95 https : / / fred . stlouisfed .
  []
 
 [2{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Overfull \hbox (8.38606pt too wide) in paragraph at lines 153--156
+Overfull \hbox (8.38606pt too wide) in paragraph at lines 154--157
 [][]$\OT1/cmtt/m/n/10.95 https : / / sdmx . oecd . org / public / rest / data / OECD . SDD . TPS ,[] DSD _ LFS @ DF _ IALFS _ UNE _ M ,[] 1 . 0 / AUS +
  []
 
 
-Overfull \hbox (13.13475pt too wide) in paragraph at lines 153--156
+Overfull \hbox (13.13475pt too wide) in paragraph at lines 154--157
 \OT1/cmtt/m/n/10.95 AUT + BEL + CAN + CZE + DNK + FIN + FRA + DEU + GRC + HUN + IRL + ITA + JPN + KOR + NLD + NZL + NOR + POL + PRT + SVK + SVN +
  []
 
 
-Overfull \hbox (82.619pt too wide) in paragraph at lines 153--156
+Overfull \hbox (82.619pt too wide) in paragraph at lines 154--157
 \OT1/cmtt/m/n/10.95 ESP + SWE + CHE + TUR + GBR + USA . .PT _ LF _ SUB . _Z . Y . _T . Y _ GE15 . .M ? startPeriod = 2000-[]01 & dimensionAtObservation =
  []
 
-[3] [4] [5] (./proposal.aux)
+[3] [4] (./proposal.aux)
 Package rerunfilecheck Info: File `proposal.out' has not changed.
-(rerunfilecheck)             Checksum: 3761500BCB5B27067D2945C974FBC4D2;3173.
+(rerunfilecheck)             Checksum: A84FA461BF74A20395DDAFAF66A56F4D;2690.
  ) 
 Here is how much of TeX's memory you used:
- 11085 strings out of 476025
- 169551 string characters out of 5790017
- 1866388 words of memory out of 5000000
+ 11084 strings out of 476025
+ 169545 string characters out of 5790017
+ 1870388 words of memory out of 5000000
  31382 multiletter control sequences out of 15000+600000
  525015 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,13n,76p,1248b,537s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,13n,76p,1248b,434s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on proposal.pdf (5 pages, 188568 bytes).
+Output written on proposal.pdf (4 pages, 187033 bytes).
 PDF statistics:
- 170 PDF objects out of 1000 (max. 8388607)
- 133 compressed objects within 2 object streams
- 20 named destinations out of 1000 (max. 500000)
+ 166 PDF objects out of 1000 (max. 8388607)
+ 130 compressed objects within 2 object streams
+ 19 named destinations out of 1000 (max. 500000)
  113 words of extra memory for PDF output out of 10000 (max. 10000000)
 

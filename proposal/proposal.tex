@@ -75,8 +75,8 @@ because it is the most widely cited and it's very clean and well-maintained. Wit
 a long time series of unemployment rates for all 50 states.
 
 \textbf{Coverage:} I'll be using all 50 U.S.\ states, from January 2000 to December 2025,
-monthly frequency (seasonally adjusted). This yields a $50 \times 312$
-data matrix.
+monthly frequency (seasonally adjusted). This yields a $50 \times 311$
+data matrix (we are missing 2025-10)
 
 \textbf{URL:} \url{https://www.bls.gov/lau/rdscnp16.htm}
 
@@ -101,7 +101,9 @@ data matrix.
 \end{center}
 
 \medskip
-\subsection{In order to answer the secondary question, I will also pull in national macroeconomic covariates from the Federal Reserve Economic Data}
+\subsection{Secondary Dataset: FRED Macroeconomic Covariates}
+In order to answer the secondary question, I will also pull in national macroeconomic covariates from the Federal Reserve Economic Data \\ 
+
 For background, FRED is a widely used database of economic time series maintained by the Federal Reserve Bank of St.\ Louis. 
 It's extremely useful for economic research and forecasting, and is used a lot by economists and data scientists. 
 
@@ -147,8 +149,7 @@ The data I'll be using are:
 As a backup, the Organisation for Economic Co-operation and Development (OECD) publishes
 unemployment data across various countries. An alternative to only focusing on U.S states is to
 apply the same hierarchical modelling approach to a broader set of regions across multiple countries.
-I could look at unemployment rates in an Asian country and bring in macroeconomic covariates from that region 
-(such as Japan unemployment rate taking into account China and South Korea rates, or how allies of Japan doing). 
+
 
 The URL for this data is: \\
 \url{https://sdmx.oecd.org/public/rest/data/OECD.SDD.TPS,DSD_LFS@DF_IALFS_UNE_M,1.0/AUS+AUT+BEL+CAN+CZE+DNK+FIN+FRA+DEU+GRC+HUN+IRL+ITA+JPN+KOR+NLD+NZL+NOR+POL+PRT+SVK+SVN+ESP+SWE+CHE+TUR+GBR+USA..PT_LF_SUB._Z.Y._T.Y_GE15..M?startPeriod=2000-01&dimensionAtObservation=AllDimensions&format=csvfile
@@ -213,7 +214,7 @@ contains two national covariates, with
 Unlike Model 1, $\alpha_s$ and $\beta_s$ are tied together through shared
 hyperparameters $(\mu_\alpha, \sigma_\alpha, \mu_\beta, \sigma_\beta)$ which represent
 the national distribution of state-level parameters. This allows for
-shrinkage: states with less data or more noise will be pulled toward the national mean, while states with strong signals can deviate more.
+shrinkage: states with more noise will be pulled toward the national mean, while states with strong signals can deviate more.
 The key variable is $\sigma_\beta$ where a small value forces all states toward the same estimated national level
 coefficient $\mu_\beta$, while a large value allows states to behave
 independently. 
@@ -248,8 +249,6 @@ Evaluation metrics:
   \item  RMSE of the posterior predictive mean per state
   \item Shrinkage plot: posterior mean $\hat{\beta}_s$ (Model 2) vs.\ MLE
         from independent fits (Model 1)
-  \item Prior sensitivity: re-fit Model 2 with wider/narrower priors on
-        $\sigma_\beta$
 \end{itemize}
 
 \subsection{Diagnostics and Validation}
