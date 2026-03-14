@@ -1,0 +1,275 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{enumitem}
+
+\hypersetup{colorlinks=true}
+
+\titleformat{\section}{\large\bfseries}{{\thesection.}}{0.5em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{{\thesubsection}}{0.5em}{}
+
+\title{
+  \textbf{STAT 405 Project Proposal} \\[0.4em]
+  Hierarchical Bayesian Forecasting of U.S. State Unemployment Rates
+}
+\author{Calvin Du (Student ID: 16507378)}
+
+\begin{document}
+\maketitle
+
+% Intro
+\section{Team}
+
+Calvin Du (Student ID: 16507378)
+
+\section{Code Repository}
+
+\url{https://github.com/calvingdu/stat405}
+
+% questions 
+\section{Scientific Questions}
+
+As a STAT + ECON major, I am particularly interested in labour markets,
+especially given the disruptions of the past several years including COVID-19,
+the rise of AI, and recent political changes. These have all materially affected
+employment patterns. Unemployment is probably the most consequential and
+closely-watched labour market indicator signalling a good or bad economic environment.
+State-level unemployment rates in the U.S.\ have huge variation mainly driven by 
+local industry composition, geography, and sensitivity to national 
+macroeconomic conditions (eg, California is more independent than other states). 
+At the same time, federal monetary policy and typical economic growth cycles will always
+affect all the states regardless of how independent they are. This creates a 
+need to balance treating each state independently and pooling all states together.
+
+\textbf{Primary question:}
+\begin{quote}
+Can I produce more accurate unemployment forecasts for each state by 
+partially pooling information across the states, borrowing strength from 
+the national trend rather than purely fitting each state by themselves?
+\end{quote}
+
+\textbf{Secondary question:}
+\begin{quote}
+Does including covariates like the federal monetary policy (like federal interest rates) 
+and national GDP growth improve forecasts beyond an autoregressive model? 
+\end{quote}
+
+Both questions are naturally explored using Bayesian hierarchical models,
+where the degree of pooling is itself inferred from the data.
+
+% datasets
+\section{Datasets}
+
+\subsection{Primary Dataset: BLS State Unemployment}
+
+The U.S.\ Bureau of Labor Statistics publishes monthly state-level
+unemployment rates through its Local Area Unemployment Statistics (LAUS)
+program. I've chosen to use this the "Employment status of the civilian noninstitutional population, seasonally adjusted" series
+because it is the most widely cited and it's very clean and well-maintained. With it, I have 
+a long time series of unemployment rates for all 50 states.
+
+\textbf{Coverage:} I'll be using all 50 U.S.\ states, from January 2000 to December 2025,
+monthly frequency (seasonally adjusted). This yields a $50 \times 312$
+data matrix.
+
+\textbf{URL:} \url{https://www.bls.gov/lau/rdscnp16.htm}
+
+\medskip
+\noindent\textbf{Dataframe structure (head):}
+
+\begin{center}
+\small
+\begin{tabular}{llrrrrrr}
+  \toprule
+  \textbf{FIPS} & \textbf{State} & \textbf{Year} & \textbf{Month} 
+    & \textbf{Labor force} & \textbf{Employed} & \textbf{Unemployed} & \textbf{Rate (\%)} \\
+  \midrule
+  01 & Alabama    & 1976 & 01 & 1,486,509 & 1,387,606 & 98,903  & 6.7 \\
+  02 & Alaska     & 1976 & 01 &   160,709 &   149,226 & 11,483  & 7.1 \\
+  04 & Arizona    & 1976 & 01 &   963,980 &   865,261 & 98,719  & 10.2 \\
+  05 & Arkansas   & 1976 & 01 &   889,912 &   825,233 & 64,679  & 7.3 \\
+  06 & California & 1976 & 01 & 9,770,553 & 8,873,133 & 897,420 & 9.2 \\
+  \multicolumn{8}{c}{\ldots} \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+\medskip
+\subsection{In order to answer the secondary question, I will also pull in national macroeconomic covariates from the Federal Reserve Economic Data}
+For background, FRED is a widely used database of economic time series maintained by the Federal Reserve Bank of St.\ Louis. 
+It's extremely useful for economic research and forecasting, and is used a lot by economists and data scientists. 
+
+The data I'll be using are:
+\begin{itemize}[noitemsep]
+  \item \textbf{Federal funds effective rate (\texttt{FEDFUNDS}) - Monthly}: This is the interest rate at which depository institutions trade federal funds with each other. It is a key tool of U.S.\ monetary policy that has a strong influence on economic activity and unemployment.
+  \item \textbf{Real Gross Domestic Product (\texttt{A191RL1Q225SBEA}) - Quarterly}: This is the real gross domestic product, which is a measure of overall economic output. The growth rate of real GDP is closely related to unemployment.
+\end{itemize}
+
+\medskip
+\noindent Both the series are downloaded as plain CSV files directly from FRED 
+(\url{https://fred.stlouisfed.org}) and cover January 2000 to December 2025.
+
+\medskip
+
+\begin{center}
+\small
+\begin{tabular}{lr}
+  \toprule
+  \textbf{observation\_date} & \textbf{FEDFUNDS} \\
+  \midrule
+  2000-01-01 & 5.45 \\
+  2000-02-01 & 5.73 \\
+  \multicolumn{2}{c}{\ldots} \\
+  2025-12-01 & 3.72 \\
+  \bottomrule
+\end{tabular}
+\hspace{1.5em}
+\begin{tabular}{lr}
+  \toprule
+  \textbf{observation\_date} & \textbf{A191RL1Q225SBEA} \\
+  \midrule
+  2000-01-01 & 1.5 \\
+  2000-04-01 & 7.5 \\
+  \multicolumn{2}{c}{\ldots} \\
+  2025-10-01 & 0.7 \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Backup Dataset: OECD Country Unemployment}
+
+As a backup, the Organisation for Economic Co-operation and Development (OECD) publishes
+unemployment data across various countries. An alternative to only focusing on U.S states is to
+apply the same hierarchical modelling approach to a broader set of regions across multiple countries.
+I could look at unemployment rates in an Asian country and bring in macroeconomic covariates from that region 
+(such as Japan unemployment rate taking into account China and South Korea rates, or how allies of Japan doing). 
+
+The URL for this data is: \\
+\url{https://sdmx.oecd.org/public/rest/data/OECD.SDD.TPS,DSD_LFS@DF_IALFS_UNE_M,1.0/AUS+AUT+BEL+CAN+CZE+DNK+FIN+FRA+DEU+GRC+HUN+IRL+ITA+JPN+KOR+NLD+NZL+NOR+POL+PRT+SVK+SVN+ESP+SWE+CHE+TUR+GBR+USA..PT_LF_SUB._Z.Y._T.Y_GE15..M?startPeriod=2000-01&dimensionAtObservation=AllDimensions&format=csvfile
+}
+
+% methods
+\section{Methodology}
+
+\subsection{Model 1: Independent AR(1) (Naive)}
+
+Each state is modelled independently with no pooling. For state $s$ and
+time $t$:
+
+\begin{align*}
+  \alpha_s &\sim \mathcal{N}(5,\; 3) & (\text{baseline level of unemployment is around 5\%}) \\
+  \beta_s  &\sim \mathcal{N}(0.5,\; 0.3) & (\text{baseline autoregressive coefficient - moderate persistence}) \\
+  \sigma   &\sim \mathrm{Exp}(1)  & (\text{shared SD across states}) \\[4pt]
+  y_{s,t} \mid \alpha_s, \beta_s, \sigma
+           &\sim \mathcal{N}\!\left(\alpha_s + \beta_s\, y_{s,t-1},\; \sigma\right)
+\end{align*}
+
+This serves as the naive baseline. Since states are fit independently,
+estimates for small or volatile states will be noisy, with no
+regularisation from the national trend or neighbouring states. 
+This model does allow states whose unemployment rates genuinely
+differ from the national picture to have their 
+own parameters without being pulled toward the national mean.
+
+\subsection{Model 2: Hierarchical AR(1) with Covariates}
+
+State parameters are drawn from national priors, enabling
+partial pooling. Macroeconomic covariates enter the likelihood as shared
+predictors:
+
+\begin{align*}
+  \mu_\alpha &\sim \mathcal{N}(5,\; 3) 
+    & \text{(national mean intercept)} \\
+  \sigma_\alpha &\sim \mathrm{Exp}(1/2) 
+    & \text{(spread of intercepts across states)} \\
+  \mu_\beta &\sim \mathcal{N}(0.5,\; 0.3) 
+    & \text{(national mean persistence coefficient)} \\
+  \sigma_\beta &\sim \mathrm{Exp}(1/0.3) 
+    & \text{(spread of persistence coefficients across states)} \\
+  \boldsymbol{\gamma} &\sim \mathcal{N}(0,\; 1) 
+    & \text{(national economic covariate coefficients)} \\
+  \sigma &\sim \mathrm{Exp}(1) 
+    & \text{(shared SD across states)} \\[6pt]
+  \alpha_s \mid \mu_\alpha, \sigma_\alpha &\sim \mathcal{N}(\mu_\alpha,\; \sigma_\alpha)
+    & \text{(state intercept, partially pooled)} \\
+  \beta_s \mid \mu_\beta, \sigma_\beta &\sim \mathcal{N}(\mu_\beta,\; \sigma_\beta)
+    & \text{(state persistence coefficient, partially pooled)} \\[6pt]
+  y_{s,t} \mid \alpha_s, \beta_s, \boldsymbol{\gamma}, \sigma
+    &\sim \mathcal{N}\!\left(
+        \alpha_s + \beta_s\, y_{s,t-1} + \boldsymbol{\gamma}^\top \mathbf{x}_t,\;
+        \sigma
+      \right) 
+\end{align*}
+
+where $\mathbf{x}_t = (\texttt{FEDFUNDS}_t,\; \texttt{GDP\_growth}_t)^\top$
+contains two national covariates, with
+\texttt{GDP\_growth} interpolated from quarterly to monthly.
+Unlike Model 1, $\alpha_s$ and $\beta_s$ are tied together through shared
+hyperparameters $(\mu_\alpha, \sigma_\alpha, \mu_\beta, \sigma_\beta)$ which represent
+the national distribution of state-level parameters. This allows for
+shrinkage: states with less data or more noise will be pulled toward the national mean, while states with strong signals can deviate more.
+The key variable is $\sigma_\beta$ where a small value forces all states toward the same estimated national level
+coefficient $\mu_\beta$, while a large value allows states to behave
+independently. 
+
+\subsection{Posterior Inference}
+
+\begin{itemize}
+  \item \textbf{Method 1: SMC via simPPLe:} \\
+        SMC will be a good fit for the independent model where parameters are uncorrelated across states,
+        and it will be interesting to see how it performs on the hierarchical model where parameters are correlated and more complex.
+        However, it may struggle with the large number of parameters and the hierarchical structure, leading to slower convergence and less accurate estimates. 
+  \item \textbf{Method 2: MCMC/HMC via Stan} \\
+        MCMC is more flexible for complex hierarchical models and can handle the correlated parameters better. 
+        Also it will be faster to handle so many parameters and more efficient for the hierarchical model.
+\end{itemize}
+
+The comparison will examine:
+\begin{itemize}
+  \item Posterior mean and credible interval and agreement between methods
+  \item Computational cost including runtime and effective sample size (ESS) per second
+  \item MCMC diagnostics such as $\hat{R}$, ESS
+\end{itemize} 
+
+
+% comparison
+\subsection{Model Comparison and Evaluation}
+
+The data are split like any timeseries: January 2000 to December 2023 will be set as training data, and
+January 2024 to December 2025 (24 months) will be the test set.
+Evaluation metrics:
+\begin{itemize}[noitemsep]
+  \item  RMSE of the posterior predictive mean per state
+  \item Shrinkage plot: posterior mean $\hat{\beta}_s$ (Model 2) vs.\ MLE
+        from independent fits (Model 1)
+  \item Prior sensitivity: re-fit Model 2 with wider/narrower priors on
+        $\sigma_\beta$
+\end{itemize}
+
+\subsection{Diagnostics and Validation}
+
+\begin{itemize}[noitemsep]
+  \item $\hat{R}$ for all parameters
+  \item Trace plots for hyperparameters $(\mu_\beta, \sigma_\beta)$ and
+        selected state-level parameters
+  \item Non-centred parameterisation if divergences arise in Stan
+\end{itemize}
+
+% misspecifcations
+\section{Potential Model Misspecifications}
+
+\begin{itemize}
+  \item \textbf{COVID-19:} unemployment spiked to $\sim$15\%
+        nationally during 2020 and is an extreme outlier. A sensitivity analysis excluding 2020 will be reported.
+  \item \textbf{Structural breaks:} the relationship between unemployment and covariates may change over time, especially with recent economic disruptions. 
+  A time-varying coefficient model could be explored as an extension.
+\end{itemize}
+
+
+\end{document}
