@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.20)  19 APR 2026 03:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.20)  19 APR 2026 21:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -307,33 +307,40 @@ File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen182
 \Gin@req@width=\dimen183
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count294
+\float@exts=\toks27
+\float@box=\box56
+\@float@everytoks=\toks28
+\@floatcapt=\box57
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 15.
+Package hyperref Info: Option `colorlinks' set `true' on input line 16.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count294
-\l__pdf_internal_box=\box56
+\l__color_backend_stack_int=\count295
+\l__pdf_internal_box=\box58
 ) (./project.aux)
 \openout1 = `project.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -376,24 +383,24 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 149.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/mathcolor.ltx))
-Package hyperref Info: Link coloring ON on input line 25.
+Package hyperref Info: Link coloring ON on input line 26.
  (./project.out) (./project.out)
 \@outlinefile=\write3
 \openout3 = `project.out'.
 
-LaTeX Info: Redefining \microtypecontext on input line 25.
-Package microtype Info: Applying patch `item' on input line 25.
-Package microtype Info: Applying patch `toc' on input line 25.
-Package microtype Info: Applying patch `eqnum' on input line 25.
-Package microtype Info: Applying patch `footnote' on input line 25.
-Package microtype Info: Applying patch `verbatim' on input line 25.
+LaTeX Info: Redefining \microtypecontext on input line 26.
+Package microtype Info: Applying patch `item' on input line 26.
+Package microtype Info: Applying patch `toc' on input line 26.
+Package microtype Info: Applying patch `eqnum' on input line 26.
+Package microtype Info: Applying patch `footnote' on input line 26.
+Package microtype Info: Applying patch `verbatim' on input line 26.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 25.
+LaTeX Info: Redefining \showhyphens on input line 26.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -401,36 +408,36 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 ) (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count295
+\scratchcounter=\count296
 \scratchdimen=\dimen184
-\scratchbox=\box57
-\nofMPsegments=\count296
-\nofMParguments=\count297
-\everyMPshowfont=\toks27
-\MPscratchCnt=\count298
+\scratchbox=\box59
+\nofMPsegments=\count297
+\nofMParguments=\count298
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count299
 \MPscratchDim=\dimen185
-\MPnumerator=\count299
-\makeMPintoPDFobject=\count300
-\everyMPtoPDFconversion=\toks28
+\MPnumerator=\count300
+\makeMPintoPDFobject=\count301
+\everyMPtoPDFconversion=\toks30
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 26.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 27.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 26.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 27.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 26.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 27.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
@@ -439,70 +446,35 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Underfull \hbox (badness 10000) in paragraph at lines 31--36
+Underfull \hbox (badness 10000) in paragraph at lines 30--35
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 37--46
+Underfull \hbox (badness 10000) in paragraph at lines 36--43
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--49
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 50--52
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--65
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 66--69
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 70--75
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 76--80
-
- []
-
-[1
-
-{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 84--87
+Underfull \hbox (badness 10000) in paragraph at lines 73--76
 
  []
 
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 91.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 80.
+[1
 
-Underfull \hbox (badness 10000) in paragraph at lines 92--93
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 95--98
+{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 81--82
 
  []
 
-[2{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Underfull \hbox (badness 10000) in paragraph at lines 161--164
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--146
 
  []
 
-LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 174.
+LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 156.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/ts1cmtt.fd
 File: ts1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
@@ -510,41 +482,64 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-
-Underfull \hbox (badness 10000) in paragraph at lines 177--181
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 182--186
+ [2{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+Underfull \hbox (badness 10000) in paragraph at lines 159--163
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 187--194
+Underfull \hbox (badness 10000) in paragraph at lines 184--190
 
  []
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[3] [4] [5] [6] [7] (./project.aux)
+[3
+pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.238 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.238 
+      ] [4
+pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.326 \newpage
+              
+pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.326 \newpage
+              ]
+<shrinkage.png, id=110, 843.15pt x 843.15pt>
+File: shrinkage.png Graphic file (type png)
+<use shrinkage.png>
+Package pdftex.def Info: shrinkage.png  used on input line 334.
+(pdftex.def)             Requested size: 338.94543pt x 338.95226pt.
+ [5
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.394 \end{verbatim}
+                     <./shrinkage.png>] [6] [7] (./project.aux)
 Package rerunfilecheck Info: File `project.out' has not changed.
-(rerunfilecheck)             Checksum: 85441E31305233EDC174EFEBE7B0CF4A;2901.
+(rerunfilecheck)             Checksum: FDC447369C3CE874DA51518B6CBA845E;2735.
  ) 
 Here is how much of TeX's memory you used:
- 13188 strings out of 476025
- 208169 string characters out of 5790017
- 1871388 words of memory out of 5000000
- 33292 multiletter control sequences out of 15000+600000
- 530765 words of font info for 154 fonts, out of 8000000 for 9000
+ 13287 strings out of 476025
+ 209643 string characters out of 5790017
+ 1870388 words of memory out of 5000000
+ 33369 multiletter control sequences out of 15000+600000
+ 531149 words of font info for 161 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,13n,76p,1246b,677s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,13n,76p,1246b,665s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on project.pdf (7 pages, 272682 bytes).
+Output written on project.pdf (7 pages, 332524 bytes).
 PDF statistics:
- 231 PDF objects out of 1000 (max. 8388607)
+ 233 PDF objects out of 1000 (max. 8388607)
  174 compressed objects within 2 object streams
- 26 named destinations out of 1000 (max. 500000)
- 37505 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 28 named destinations out of 1000 (max. 500000)
+ 37502 words of extra memory for PDF output out of 42996 (max. 10000000)
 
